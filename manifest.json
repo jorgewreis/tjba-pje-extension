@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.2",
+  "name": "PJe Slim",
+  "icons": {
+    "128": "ico128.png"
+  },
+  "description": "Extensao para alteracao de temas css do PJe",
+  "permissions": ["storage", "activeTab", "tabs", "scripting", "fontSettings", "declarativeContent", "*://*.tjba.jus.br/*", "https://frontend.cloud.pje.jus.br/*", "https://sso.cloud.pje.jus.br/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": [
+        "*://pje.tjba.jus.br/*",
+        "https://frontend.cloud.pje.jus.br/*",
+        "https://sso.cloud.pje.jus.br/*"
+      ],
+      "css": ["content_style.css"],
+      "js": ["content_script.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "author": "Jorge Wanderley Reis de Menezes"
+}
