@@ -32,6 +32,14 @@ div.acessar-certificado.botoes input{
   width: 80% !important;
 }
 
+div.dados div#divLogin:after{
+  display: none !important;
+}
+
+.btn.btn-primary {
+  background: #008cef !important;
+}
+
 div.dados > div{
   padding: 0 !important;
   margin: 0 !important;

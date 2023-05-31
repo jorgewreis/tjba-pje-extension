@@ -1,0 +1,18 @@
+
+------------------------------------------------------------------------------------------------------
+## Versão 1.0.3
+
+# Implementações
+- Simplificação da tela de login
+- Tema cor de cinza nas barras superiores
+- Alteração de estilos e tamanhos de fontes
+- Mostrar local de perfil de usuário mostrado fixo na barra superior
+- Mostrar assuntos do processo na bara superior, quando da visualização do processo
+- Mostrar etiqueta de réu preso na barra superior, quando da visualização do processo
+- Ajustar conteúdo da página de acordo com a altura do menu superior 
+
+# Correções
+- Supressão de permissões não utilizadas no Manifest.json
+- Correção de erros na execução de funções em páginas onde não existia a classe informada
+
+> atualizado em 31/05/2023
