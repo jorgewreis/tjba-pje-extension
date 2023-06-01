@@ -11,22 +11,46 @@ function mostraLocal() {
     }
 };
 
-// Função para consultar se a prioridade é de réu preso
-function consultaPrioridadePreso() {
-    const palavra = 'Réu Preso';
-    const trs = [...document.querySelectorAll('#maisDetalhes > dl > dd')];
-    const search = palavra.toLowerCase();
-    trs.forEach(el => {
-        const matches = el.textContent.toLowerCase().includes(search);
-        if (matches) {
-            const novaPri = document.createElement("div");
-            novaPri.textContent = "Réu Preso";
-            novaPri.id = "titleReuPreso";
-            novoLocal = document.querySelector("form#navbar > ul.navbar-nav");
-            novoLocal.appendChild(novaPri);
-        }
-    });
-};
+function verificaCampos() {
+    let elemento = document.querySelector("#maisDetalhes > dl > dd:nth-child(14)");
+    elemento = elemento.textContent.toString().toUpperCase();
+    let elemento2 = document.querySelector("#maisDetalhes > dl > dd:nth-child(22)");
+    elemento2 = elemento2.textContent.toString().toUpperCase();
+    if ((elemento == "SIM") || (elemento2 != "NÃO")){
+        const novoElemento = document.createElement("div");
+        novoElemento.id = "titleTags";
+        let novoLocal = document.querySelector("form#navbar > ul.navbar-nav");
+        novoLocal.appendChild(novoElemento);
+    }
+}
+
+// Função para mostrar prioridades na barra superior
+function mostraPrioridades() {
+    let elemento = document.querySelector("#maisDetalhes > dl > dd:nth-child(22)");
+    elemento = elemento.textContent.toString().toUpperCase();
+    if (elemento != "NÃO") {
+        const conteudo = elemento;
+        const novoElemento = document.createElement("div");
+        novoElemento.textContent = conteudo;
+        novoElemento.id = "titlePrioridades";
+        let novoLocal = document.querySelector("form#navbar > ul.navbar-nav > div#titleTags");
+        novoLocal.appendChild(novoElemento);
+    }
+}
+
+// Função para mostrar sigilo na barra superior
+function mostraSigilo() {
+    let elemento = document.querySelector("#maisDetalhes > dl > dd:nth-child(14)");
+    elemento = elemento.textContent.toString().toUpperCase();
+    if (elemento == "SIM") {
+        const conteudo = "SEGREDO DE JUSTIÇA";
+        const novoElemento = document.createElement("div");
+        novoElemento.textContent = conteudo;
+        novoElemento.id = "titleSigilo";
+        let novoLocal = document.querySelector("form#navbar > ul.navbar-nav > div#titleTags");
+        novoLocal.appendChild(novoElemento);
+    }
+}
 
 // crie uma função sleep para aguardar o carregamento da página
 function sleep(ms) {
@@ -45,7 +69,7 @@ async function incluiAssuntos() {
 
 // Função para alterar margem superior do conteudo da página
 function alteraMargemSuperior() {
-    const referencia = document.querySelector(".navbar-collapse");
+    const referencia = document.querySelector("#pageBody > div.navbar.navbar-default.navbar-fixed-top.nav-topo > div.container-fluid");
     const margem = referencia.offsetHeight + 'px';
     document.querySelector(".timeline").style.top = margem;
     document.querySelector(".detalhe-documento").style.top = margem;
@@ -65,7 +89,9 @@ window.addEventListener('load', function() {
     };
     if (assuntos){
         incluiAssuntos();
-        consultaPrioridadePreso();
+        verificaCampos();
+        mostraSigilo();
+        mostraPrioridades();
         alteraMargemSuperior();
     } else {
         mostraLocal();

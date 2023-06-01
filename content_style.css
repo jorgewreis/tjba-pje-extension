@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6{
   font-family: 'Poppins', system-ui !important;
 }
 
-.navtop .menu-usuario.open > a:focus{
+.navtop .menu-usuario.open > a:focus, .navtop .menu-usuario.open > a{
 	color: #fff !important;
   background-color: #3D3D3D !important;
 }
@@ -145,6 +145,16 @@ h1, h2, h3, h4, h5, h6{
   margin-top: -7px !important;
 }
 
+#titleTags{
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 450px;
+  width: 400px;
+  margin: 5px 5px 5px 10px;
+}
+
 #titleLocal{
   font-family: system-ui !important;
   font-size: 10px !important;
@@ -153,23 +163,45 @@ h1, h2, h3, h4, h5, h6{
   color: rgba(255,255,255,0.5) !important;
 }
 
-#titleReuPreso{
+#titlePrioridades{
   font-family: system-ui !important;
-  background-color: red !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
   min-width: 80px !important;
+  width: fit-content !important;
+  max-width: 450px !important;
+  height: 20px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1px 7px !important;
+  color: rgb(211, 22, 22) !important;
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  border-radius: 3px !important;
+  margin-right: 5px !important;
+}
+
+#titleSigilo{
+  font-family: system-ui !important;
+  background-color: rgba(255, 0, 35, 0.9) !important;
+  min-width: 80px !important;
+  max-width: 450px !important;
   width: fit-content !important;
   height: 20px !important;
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 2px 10px !important;
-  color: white !important;
+  padding: 1px 10px !important;
+  color: rgb(255, 255, 255) !important;
   font-size: 10px !important;
   text-transform: uppercase !important;
-  font-weight: 300 !important;
-  border-radius: 10px 10px 0 0 !important;
-  margin-left: 10px !important;
+  font-weight: 500 !important;
+  border-radius: 3px !important;
+  margin-right: 5px !important;
+  text-shadow: 0 0 4px rgb(160, 160, 160) !important;
 }
 
 #titleAssuntos{
