@@ -1,3 +1,24 @@
+## Versão 1.0.5
+
+# Atualizações
+- Implementação de sub-tags separadas para cada prioridade listada
+- Implementação de tag para Juízo 100% Digital na cor azul
+
+# Correções
+- Criação de um container para ajustar as tags de Sigilo e prioridades
+- Busca melhorada das informações de Sigilo e prioridades
+
+------------------------------------------------------------------------------------------------------
+## Versão 1.0.4
+
+# Atualizações
+- Criação de uma barra de tags para inclusão de informações de sigilo e prioridades
+
+# Correções
+- Correção de layout das tags
+- Correção de erros no arquivo Javascript
+
+> atualizado em 01/06/2023
 
 ------------------------------------------------------------------------------------------------------
 ## Versão 1.0.3

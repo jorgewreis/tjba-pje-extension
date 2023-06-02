@@ -150,8 +150,8 @@ h1, h2, h3, h4, h5, h6{
   flex-direction: row; 
   align-items: center;
   justify-content: flex-start;
-  max-width: 450px;
-  width: 400px;
+  flex-wrap: wrap;
+  width: 33vw;
   margin: 5px 5px 5px 10px;
 }
 
@@ -163,13 +163,13 @@ h1, h2, h3, h4, h5, h6{
   color: rgba(255,255,255,0.5) !important;
 }
 
-#titlePrioridades{
+#titlePrioridade{
   font-family: system-ui !important;
   background-color: rgba(255, 255, 255, 0.9) !important;
   min-width: 80px !important;
   width: fit-content !important;
-  max-width: 450px !important;
-  height: 20px !important;
+  max-width: 30vw !important;
+  min-height: 20px !important;
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
@@ -181,15 +181,16 @@ h1, h2, h3, h4, h5, h6{
   font-weight: 500 !important;
   border-radius: 3px !important;
   margin-right: 5px !important;
+  margin-top: 3px !important;
 }
 
 #titleSigilo{
   font-family: system-ui !important;
   background-color: rgba(255, 0, 35, 0.9) !important;
   min-width: 80px !important;
-  max-width: 450px !important;
+  max-width: 30vw !important;
   width: fit-content !important;
-  height: 20px !important;
+  min-height: 20px !important;
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
@@ -201,6 +202,29 @@ h1, h2, h3, h4, h5, h6{
   font-weight: 500 !important;
   border-radius: 3px !important;
   margin-right: 5px !important;
+  margin-top: 3px !important;
+  text-shadow: 0 0 4px rgb(160, 160, 160) !important;
+}
+
+#titleDigital{
+  font-family: system-ui !important;
+  background-color: rgb(45, 90, 255) !important;
+  min-width: 80px !important;
+  max-width: 30vw !important;
+  width: fit-content !important;
+  min-height: 20px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1px 10px !important;
+  color: rgb(255, 255, 255) !important;
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  border-radius: 3px !important;
+  margin-right: 5px !important;
+  margin-top: 3px !important;
   text-shadow: 0 0 4px rgb(160, 160, 160) !important;
 }
 
@@ -252,4 +276,42 @@ h1, h2, h3, h4, h5, h6{
   background: #c4e1ffab !important;
   color: #0b5fdd !important;
   border-left: 3px solid #0b5fdd !important;
+}
+
+#divActions > filtro-tarefas > div > div.row{
+  min-height: 45px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  font-family: system-ui !important;
+}
+
+#divActions > filtro-tarefas > div > div.row > div:nth-child(1){
+  padding: 0 !important;
+  margin: 0 0 4px 2px !important;
+}
+
+#divActions > filtro-tarefas > div > div.row > div:nth-child(1) > span{
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+#divActions > filtro-tarefas > div > div.row > div:nth-child(2){
+  padding: 0 !important;
+  margin: 2px !important;
+  height: fit-content !important;
+}
+
+#divActions > filtro-tarefas > div > div.row > div:nth-child(2) > span{
+  padding: 3px 10px !important;
+  margin: 0 !important;
+  font-size: 9px !important;
+  font-weight: 400 !important;
+  border-radius: 4px !important;
+}
+
+#divActions > filtro-tarefas > div > div.row > div:nth-child(2) > span::after{
+  content: 'PROC' !important;
+  margin-left: 3px !important;
 }
