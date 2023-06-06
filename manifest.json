@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "version": "1.0.4",
+  "version": "1.0.6",
   "name": "PJe Slim",
   "icons": {
     "128": "ico128.png"
   },
-  "description": "Extensao para alteracao de temas css do PJe",
+  "description": "Pacote com alterações em CSS e JavaScript para plataforma PJe. Versão Beta desenvolvida integralmente por Jorge Reis.",
 
   "content_scripts": [
     {

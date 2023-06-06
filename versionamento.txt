@@ -1,3 +1,10 @@
+## Versão 1.0.6
+
+# Atualizações
+- Melhorias na visualização de processos nas filas de trabalho;
+- Alteração das cores das etiquetas;
+
+------------------------------------------------------------------------------------------------------
 ## Versão 1.0.5
 
 # Atualizações

@@ -315,3 +315,74 @@ h1, h2, h3, h4, h5, h6{
   content: 'PROC' !important;
   margin-left: 3px !important;
 }
+
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > span.orgao.col-sm-12.no-padding, 
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.row.icones
+{
+  display: none !important;
+}
+
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > a > span{
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color:rgb(60, 60, 60) !important;
+  padding-left: 15px !important;
+  margin-bottom: 10px !important;
+}
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > a > span::before{
+  content: "Assunto(s):" !important;
+  margin-right: 3px !important;
+  font-weight: 400 !important;
+}
+
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div{
+  transition: all 2s !important;
+  border-left: 5px solid transparent !important;
+  background-color: #ebebeb !important;
+  border-bottom: 1px solid lightgray !important;
+  box-shadow: none !important;
+}
+
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div:hover, 
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div:active
+{
+  border-left: 5px solid #0b5fdd !important;
+  background-color: white !important;
+  transition: all 1s !important;
+}
+
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > a > div > span.tarefa-numero-processo.process{
+  color: #0b5fdd !important;
+}
+
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > div.label-info{
+  background-color: #606060 !important;
+}
+
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > div.label-info > span:first-child{
+  color: #ebebeb !important;
+  font-size: 9px !important;
+  font-weight: 500 !important;
+  padding: 3px 7px !important;
+  text-transform: uppercase !important;
+}
+
+#divProcessosTarefa{
+  background: #e3e3e3 !important;
+}
+
+#divSideBar > side-bar > nav{
+  background: transparent !important;
+  border-right: none !important;
+}
+
+#inputPesquisaTarefas{
+  border: none !important;
+  height: 33px !important;
+  font-size: 12px !important;
+}
+
+#dropdown-filtro-tarefas, #divActions > filtro-tarefas > div > div.input-group > span > button{
+  border: none !important;
+  height: 32px !important;
+}
