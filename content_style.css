@@ -9,48 +9,91 @@ body{
 	color: #454545 !important;
 }
 
+.login-body{
+  background: transparent !important;
+}
+
 .pageBody{
   background-color: #e9e9e9 !important;
 }
 
 /* INDEX -------------------------------------------------------------------------------------------------------*/
-div.acessar-certificado.botoes form a {
-  text-align: left !important;
-  color: gray !important;
-  font-size: 12px !important;
-  margin-left: 6px !important;
-  margin-top: 5px !important;  
-}
 
-div.dados div#divLogin::before{
-  display: none !important;
-}
+    /* --- Ocultar itens desnecessários */
+      /* --- Assistente virtual TJBA*/ 
+      body > button.solutis-alltalk-button{
+        display: none !important;
+      }
 
-div.acessar-certificado.botoes input{
-  background: #008cef !important;
-  padding: 0 !important;
-  width: 80% !important;
-}
-
-div.dados div#divLogin:after{
-  display: none !important;
-}
-
-.btn.btn-primary {
-  background: #008cef !important;
-}
-
-div.dados > div{
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-div.identificacao{
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
+    /* ---  Reformulação do formulário de login com certificado*/
+      /* --- Fundo do formulário */
+      .login{
+        padding: 2px !important;
+      }
+      .login div.identificacao{
+        background: rgba(255, 255, 255, 0.3) !important;
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 5px 5px 0 0 !important;
+        border-bottom: 1px solid gray !important;
+      }
+      .login div.identificacao > div.dados{
+        display: flex !important;
+        align-items: flex-end !important;
+      }
+      /* --- Modo de Assinatura e Obter Certificado*/
+      .login div.acessar-certificado > form > a.modoOperacao, .login div.acessar-certificado > form > a#obterCertificado{
+        text-transform: uppercase !important;
+        font-size: 11px !important;
+        color: gray !important;
+        text-align: start !important;
+        margin-left: 10px !important;
+      }
+      .login div.acessar-certificado > form > a.modoOperacao > span{
+        font-weight: 700 !important;
+      }
+      /* --- Botão de entrar com certificado */
+      .login div.acessar-certificado > form > input#loginAplicacaoButton {
+        background: #008cef !important;
+        padding: 0 50px !important;
+        min-height: 40px !important;
+        width: max-content !important;
+      }
+      /* --- Divisoria sem a palavra "ou" */
+      .login .formLogin#divLogin::before{
+        display: none !important;
+      }
+       
+    /* ---  Reformulação do formulário de login sem certificado */
+      /* --- Informação para solicitar nova senha */
+      .login #btnTrocarSenha {
+        text-transform: uppercase !important;
+        font-size: 11px !important;
+        color: gray !important;
+        text-align: start !important;
+        margin-left: 155px !important;
+        margin-top: -15px !important;
+      }
+      /* --- Botão de entrar com usuário e senha */
+      .login #btnEntrar{
+        background: #008cef !important;
+        padding: 0 30px !important;
+        min-height: 40px !important;
+        width: max-content !important;
+        margin-bottom: 30px !important;
+      }
+    
+    /* --- Barra de versionamento */
+    body > div.conteudo-login > div > div.versaoSistema > div{
+      font-size: 10px !important; 
+      text-align: left !important;
+      margin-left: 20px !important;
+    }
+    body > div.conteudo-login > div > div.versaoSistema > div::after{
+      content: 'Pje Slim 1.0.7 - Atualizada em 19/06/2023 - 13:00' !important;
+      text-transform: capitalize !important;
+      color: #008cef !important;
+    }
 
 /* CLASSES DO BOOTSRAP -----------------------------------------------------------------------------------------*/
 /* HEADING */
@@ -316,10 +359,30 @@ h1, h2, h3, h4, h5, h6{
   margin-left: 3px !important;
 }
 
-#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > span.orgao.col-sm-12.no-padding, 
-#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.row.icones
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > span.orgao.col-sm-12.no-padding,
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.row.icones > div > pje-lembretes
 {
   display: none !important;
+}
+
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.row.icones{
+  border: none !important;
+}
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.row.icones > div{
+  filter: grayscale(1) !important;
+  height: 20px !important;
+  border: none !important;
+}
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.row.icones > div.pull-left{
+  padding-left: 25px !important;
+}
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.row.icones > div > pje-link-autos-digitais > button > i::before{
+  content: '\f15c' !important;
+  filter: grayscale(1) !important;
+}
+#processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.row.icones > div > i[title='Processo prioritário']::before{
+  content: '\f102' !important;
+  filter: grayscale(1) !important;
 }
 
 #processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > a > span{
