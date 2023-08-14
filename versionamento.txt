@@ -1,3 +1,12 @@
+## Versão 1.0.8
+- Alteração na folha de estilos da página de consulta processos e movimentações;
+
+## Versão 1.0.7
+
+# Correções
+- Correção de código css em razão da atualização 1.0.34 do Pje pelo TJBA
+
+------------------------------------------------------------------------------------------------------
 ## Versão 1.0.6
 
 # Atualizações

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @font-face {
   font-family: "Poppins";
   src: local("/fonts/Poppins-Regular.ttf") format("truetype");
@@ -36,11 +38,23 @@ body{
         box-shadow: none !important;
         border-radius: 5px 5px 0 0 !important;
         border-bottom: 1px solid gray !important;
+        width: 700px !important;
       }
+
+      body > div.form-signin{
+        background: rgba(255, 255, 255, 0.3) !important;
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 5px 5px 0 0 !important;
+        border-bottom: 1px solid gray !important;
+        width: 700px !important;
+      }
+
       .login div.identificacao > div.dados{
         display: flex !important;
         align-items: flex-end !important;
       }
+
       /* --- Modo de Assinatura e Obter Certificado*/
       .login div.acessar-certificado > form > a.modoOperacao, .login div.acessar-certificado > form > a#obterCertificado{
         text-transform: uppercase !important;
@@ -90,7 +104,7 @@ body{
       margin-left: 20px !important;
     }
     body > div.conteudo-login > div > div.versaoSistema > div::after{
-      content: 'Pje Slim 1.0.7 - Atualizada em 19/06/2023 - 13:00' !important;
+      content: 'Pje Slim 1.0.8 - Atualizada em 14/08/2023 - 12:00' !important;
       text-transform: capitalize !important;
       color: #008cef !important;
     }
@@ -300,10 +314,14 @@ h1, h2, h3, h4, h5, h6{
   display: none !important;
 }
 
-.menuItem, assinatura>div>a{
-  font-family: monospace !important;
+.menuItem{
+  font-family: 'Poppins', system-ui !important;
   text-transform: uppercase !important;
   font-size: 12px !important;
+}
+
+assinatura > div > a{
+  border-left: 3px solid gold !important;
 }
 
 .menuItem a{
@@ -316,7 +334,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .menuItem a:hover{
-  background: #c4e1ffab !important;
+  background: #e3f1ffab !important;
   color: #0b5fdd !important;
   border-left: 3px solid #0b5fdd !important;
 }
@@ -448,4 +466,111 @@ h1, h2, h3, h4, h5, h6{
 #dropdown-filtro-tarefas, #divActions > filtro-tarefas > div > div.input-group > span > button{
   border: none !important;
   height: 32px !important;
+}
+
+/* CONSULTA DE PROCESSO */
+.timeline{
+  background-color: whitesmoke !important;
+}
+
+.timeline .media{
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.timeline .media.interno.tipo-M{
+  width: 98% !important;
+  margin: 5px !important;
+  background-color: white !important;
+}
+
+.timeline .media.interno .media-left{
+  display: none !important;
+}
+
+.timeline .media.interno.tipo-D .media-body,
+.timeline .media.interno.tipo-M .media-body{
+  width: 100% !important;
+  background-color: white !important;
+}
+
+.timeline .media.interno.tipo-M > .box{
+  border-left-style: solid !important;
+  border-left-width: 10px !important;
+  border-left-color: transparent !important;
+  background-color: whitesmoke !important;
+}
+
+.timeline .media.interno.tipo-D > .box{
+  border-left-style: solid !important;
+  border-left-width: 5px !important;
+  border-left-color: gold !important;
+  background: white !important; 
+}
+
+.timeline .media.interno.tipo-D.active > .media-body.box{
+  border-left-style: groove !important;
+  border-left-width: 10px !important;
+  border-left-color: rgb(45,90,255) !important;
+  background: #c9e6ff !important;
+}
+
+.timeline .media.interno .media-body div:last-child{
+  display: none !important;
+}
+
+.timeline .media.interno .media-body i.fa{
+  display: none !important;
+}
+
+.timeline .media.interno .media-body,
+.timeline .media.interno .media-body .text-upper{
+  font-size: 11px !important;
+  font-family: 'Poppins', system-ui !important;
+}
+
+.timeline .media.interno .media-body .anexos a{
+  font-size: 10px !important;
+  text-transform: uppercase;
+  padding: 5px 0 5px 10px !important;
+  font-family: 'Poppins', system-ui !important;
+  background-color: transparent !important;
+  margin: 0 -3px 0 0 !important;
+}
+
+.timeline .media > .media-body{
+  padding: 4px 5px 2px !important;
+  line-height: 17px !important;
+}
+
+.timeline .media > .media-body.box{
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.timeline .media.data{
+  margin-left: 0 !important;
+  border-radius: 0 !important;
+  width: 40% !important;
+  font-weight: 500 !important;
+  text-align: left !important;
+  font-size: 10px !important;
+  padding: 5px 0 5px 10px !important;
+  font-family: 'Poppins', system-ui !important;
+  margin: 4px 5px !important;
+  background: linear-gradient(90deg, rgba(200,200,200,1) 0%, rgba(200,200,200,1) 35%, rgba(255,255,255,0) 100%) !important;
+}
+
+.timeline .media.data .div-data-rolagem{
+  margin-left: 0 !important;
+  border-radius: 0 !important;
+  background-color: #b9b9b9 !important;
+  padding-left: 10px !important;
+  font-size: 14px !important;
+  margin-top: -117px !important;
+}
+
+.timeline .media.data > .media-body{
+  width: 100px !important;
 }

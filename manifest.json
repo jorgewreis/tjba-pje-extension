@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.0.6",
+  "version": "1.0.8",
   "name": "PJe Slim",
   "icons": {
     "128": "ico128.png"
