@@ -104,7 +104,7 @@ body{
       margin-left: 20px !important;
     }
     body > div.conteudo-login > div > div.versaoSistema > div::after{
-      content: 'Pje Slim 1.0.8 - Atualizada em 14/08/2023 - 12:00' !important;
+      content: 'Pje Slim 1.0.10 Hotfix - Atualizada em 18/08/2023 - 16:00' !important;
       text-transform: capitalize !important;
       color: #008cef !important;
     }
@@ -474,19 +474,28 @@ assinatura > div > a{
 }
 
 .timeline .media{
-  margin: 0 !important;
+  margin: -5px 0 0 0 !important;
   padding: 0 !important;
   border: none !important;
 }
 
-.timeline .media.interno.tipo-M{
-  width: 98% !important;
-  margin: 5px !important;
+/*.timeline .media.interno.tipo-M{
   background-color: white !important;
+}*/
+
+.timeline .media.interno .media-left::after,
+.timeline .media.interno .media-left::before,
+.timeline .media.interno.tipo-M .media-left{
+  display: none !important;
 }
 
-.timeline .media.interno .media-left{
-  display: none !important;
+.timeline .media.interno .media-left span.icon-auto{
+  width: 5px !important;
+  height: 15px !important;
+  border-radius: 2px !important;
+  margin-left: 3px !important;
+  margin-top: 5px !important;
+  position: absolute !important;
 }
 
 .timeline .media.interno.tipo-D .media-body,
@@ -497,16 +506,19 @@ assinatura > div > a{
 
 .timeline .media.interno.tipo-M > .box{
   border-left-style: solid !important;
-  border-left-width: 10px !important;
-  border-left-color: transparent !important;
-  background-color: whitesmoke !important;
+  border-left-width: 5px !important;
+  border-left-color: gray !important;
+  background-color: white !important;
+  border-bottom: 1px solid lightgray !important;
 }
 
 .timeline .media.interno.tipo-D > .box{
   border-left-style: solid !important;
   border-left-width: 5px !important;
-  border-left-color: gold !important;
-  background: white !important; 
+  border-left-color: gold !important;  
+  background: white !important;
+  border-bottom: 1px solid lightgray !important;
+  padding: 15px 5px !important;
 }
 
 .timeline .media.interno.tipo-D.active > .media-body.box{
@@ -520,18 +532,24 @@ assinatura > div > a{
   display: none !important;
 }
 
-.timeline .media.interno .media-body i.fa{
+.timeline .media.interno .media-body i.fa-bullhorn{
   display: none !important;
+}
+
+.timeline .media.interno .media-body i.fa-clipboard{
+  margin: 0 5px !important;
 }
 
 .timeline .media.interno .media-body,
 .timeline .media.interno .media-body .text-upper{
-  font-size: 11px !important;
+  font-size: 12px !important;
   font-family: 'Poppins', system-ui !important;
+  margin-left: 3px !important;
 }
 
 .timeline .media.interno .media-body .anexos a{
-  font-size: 10px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
   text-transform: uppercase;
   padding: 5px 0 5px 10px !important;
   font-family: 'Poppins', system-ui !important;
@@ -556,9 +574,9 @@ assinatura > div > a{
   font-weight: 500 !important;
   text-align: left !important;
   font-size: 10px !important;
-  padding: 5px 0 5px 10px !important;
+  padding: 3px 0 3px 10px !important;
   font-family: 'Poppins', system-ui !important;
-  margin: 4px 5px !important;
+  margin: 4px 0px !important;
   background: linear-gradient(90deg, rgba(200,200,200,1) 0%, rgba(200,200,200,1) 35%, rgba(255,255,255,0) 100%) !important;
 }
 

@@ -1,6 +1,14 @@
+## Versão 1.0.10
+- Hotfix para correção de tamanho de fonte e ícones ocultos
+
+## Versão 1.0.9
+- Hotfix para correção de tamanho de fonte e ícones ocultos
+
+------------------------------------------------------------------------------------------------------
 ## Versão 1.0.8
 - Alteração na folha de estilos da página de consulta processos e movimentações;
 
+------------------------------------------------------------------------------------------------------
 ## Versão 1.0.7
 
 # Correções
