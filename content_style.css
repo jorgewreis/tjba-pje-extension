@@ -104,7 +104,7 @@ body{
       margin-left: 20px !important;
     }
     body > div.conteudo-login > div > div.versaoSistema > div::after{
-      content: 'Pje Slim 1.0.10 Hotfix - Atualizada em 18/08/2023 - 16:00' !important;
+      content: 'Pje Slim - Versão Beta 1.0.11 - 22/08/2023 - 19:32' !important;
       text-transform: capitalize !important;
       color: #008cef !important;
     }
@@ -474,7 +474,7 @@ assinatura > div > a{
 }
 
 .timeline .media{
-  margin: -5px 0 0 0 !important;
+  margin: 0 !important;
   padding: 0 !important;
   border: none !important;
 }
@@ -484,8 +484,7 @@ assinatura > div > a{
 }*/
 
 .timeline .media.interno .media-left::after,
-.timeline .media.interno .media-left::before,
-.timeline .media.interno.tipo-M .media-left{
+.timeline .media.interno .media-left::before{
   display: none !important;
 }
 
@@ -494,8 +493,14 @@ assinatura > div > a{
   height: 15px !important;
   border-radius: 2px !important;
   margin-left: 3px !important;
-  margin-top: 5px !important;
+  margin-top: 11px !important;
   position: absolute !important;
+}
+
+.timeline .media.interno.tipo-M .media-left span.icon-auto{
+  height: 5px !important;
+  background-color: #686868 !important;
+  margin-top: 16px !important;
 }
 
 .timeline .media.interno.tipo-D .media-body,
@@ -504,21 +509,14 @@ assinatura > div > a{
   background-color: white !important;
 }
 
-.timeline .media.interno.tipo-M > .box{
-  border-left-style: solid !important;
-  border-left-width: 5px !important;
-  border-left-color: gray !important;
-  background-color: white !important;
-  border-bottom: 1px solid lightgray !important;
-}
-
+.timeline .media.interno.tipo-M > .box,
 .timeline .media.interno.tipo-D > .box{
   border-left-style: solid !important;
   border-left-width: 5px !important;
   border-left-color: gold !important;  
   background: white !important;
   border-bottom: 1px solid lightgray !important;
-  padding: 15px 5px !important;
+  padding: 10px 5px !important;
 }
 
 .timeline .media.interno.tipo-D.active > .media-body.box{
@@ -565,19 +563,27 @@ assinatura > div > a{
 .timeline .media > .media-body.box{
   background: transparent !important;
   box-shadow: none !important;
+  margin-bottom: 0 !important;
 }
 
 .timeline .media.data{
-  margin-left: 0 !important;
-  border-radius: 0 !important;
-  width: 40% !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px 5px 0 0 !important;
+  width: fit-content !important;
   font-weight: 500 !important;
   text-align: left !important;
   font-size: 10px !important;
-  padding: 3px 0 3px 10px !important;
   font-family: 'Poppins', system-ui !important;
-  margin: 4px 0px !important;
-  background: linear-gradient(90deg, rgba(200,200,200,1) 0%, rgba(200,200,200,1) 35%, rgba(255,255,255,0) 100%) !important;
+  margin: 5px 3px 0 3px !important;
+  border-left-style: solid !important;
+  border-left-width: 5px !important;
+  border-left-color: gold !important;
+  background: white !important;
+  border-bottom-style: solid !important;
+  border-bottom-width: 1px !important;
+  border-bottom-color: lightgray !important;
 }
 
 .timeline .media.data .div-data-rolagem{
@@ -589,6 +595,8 @@ assinatura > div > a{
   margin-top: -117px !important;
 }
 
-.timeline .media.data > .media-body{
-  width: 100px !important;
+.timeline div.media.data > .media-body{
+  width: fit-content !important;
+  padding: 0 15px 0px 10px !important;
+  margin-bottom: 0 !important;
 }

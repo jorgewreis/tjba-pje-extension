@@ -1,6 +1,11 @@
+## Versão 1.0.11
+- Melhorias na visualização de processos e movimentações processuais;
+
+------------------------------------------------------------------------------------------------------
 ## Versão 1.0.10
 - Hotfix para correção de tamanho de fonte e ícones ocultos
 
+------------------------------------------------------------------------------------------------------
 ## Versão 1.0.9
 - Hotfix para correção de tamanho de fonte e ícones ocultos
 
