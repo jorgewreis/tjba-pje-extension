@@ -1,3 +1,8 @@
+
+## Versão 1.0.12
+- Correção no tamanho da timeline de movimentações processuais;
+
+------------------------------------------------------------------------------------------------------
 ## Versão 1.0.11
 - Melhorias na visualização de processos e movimentações processuais;
 

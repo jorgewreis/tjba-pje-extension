@@ -206,6 +206,7 @@ function alteraMargemSuperior() {
     const referencia = document.querySelector("#pageBody > div.navbar.navbar-default.navbar-fixed-top.nav-topo > div.container-fluid");
     const margem = referencia.offsetHeight + 'px';
     document.querySelector(".timeline").style.top = margem;
+    document.querySelector(".timeline").style.height = 'calc(100vh - 60px)';
     document.querySelector(".detalhe-documento").style.top = margem;
 };
 

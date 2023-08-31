@@ -104,7 +104,7 @@ body{
       margin-left: 20px !important;
     }
     body > div.conteudo-login > div > div.versaoSistema > div::after{
-      content: 'Pje Slim - Versão Beta 1.0.11 - 22/08/2023 - 19:32' !important;
+      content: 'Pje Slim - Versão Beta 1.0.12 - 24/08/2023 - 11:32' !important;
       text-transform: capitalize !important;
       color: #008cef !important;
     }
@@ -520,8 +520,8 @@ assinatura > div > a{
 }
 
 .timeline .media.interno.tipo-D.active > .media-body.box{
-  border-left-style: groove !important;
-  border-left-width: 10px !important;
+  border-left-style: solid !important;
+  border-left-width: 5px !important;
   border-left-color: rgb(45,90,255) !important;
   background: #c9e6ff !important;
 }
@@ -599,4 +599,16 @@ assinatura > div > a{
   width: fit-content !important;
   padding: 0 15px 0px 10px !important;
   margin-bottom: 0 !important;
+}
+
+.mini-button{
+  border: none !important;
+  padding: 1px 10px !important;
+  height: 15px !important;
+  margin: 0 10px !important;
+  color: black !important;
+  font-size: 8px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  font-family: 'Poppins', system-ui !important;
 }

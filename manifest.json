@@ -1,23 +1,38 @@
 {
   "manifest_version": 3,
-  "version": "1.0.11",
+  "version": "1.0.13",
   "name": "PJe Slim",
   "icons": {
+    "16": "ico128.png",
+    "48": "ico128.png",
     "128": "ico128.png"
   },
   "description": "Pacote com alterações em CSS e JavaScript para plataforma PJe. Versão Beta desenvolvida integralmente por Jorge Reis.",
+
+  "permissions": [
+    "storage"
+  ],
+
+  "action":{
+    "default_popup": "options.html"
+  },
 
   "content_scripts": [
     {
       "all_frames": true,
       "matches": [
+        "*://tjba.jus.br/*",
         "*://pje.tjba.jus.br/*",
-        "https://frontend.cloud.pje.jus.br/*",
-        "https://sso.cloud.pje.jus.br/*"
+        "*://frontend.cloud.pje.jus.br/*",
+        "*://sso.cloud.pje.jus.br/*"
       ],
       "css": ["content_style.css"],
-      "js": ["content_script.js"],
-      "run_at": "document_end"
+      "js": [
+        "content_script.js", 
+        "background.js",
+        "atosPorConsulta.js"
+      ],
+      "run_at": "document_idle"
     }
   ],
   "author": "Jorge Wanderley Reis de Menezes"
