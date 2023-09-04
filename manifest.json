@@ -9,10 +9,6 @@
   },
   "description": "Pacote com alterações em CSS e JavaScript para plataforma PJe. Versão Beta desenvolvida integralmente por Jorge Reis.",
 
-  "permissions": [
-    "storage"
-  ],
-
   "action":{
     "default_popup": "options.html"
   },
@@ -28,9 +24,7 @@
       ],
       "css": ["content_style.css"],
       "js": [
-        "content_script.js", 
-        "background.js",
-        "atosPorConsulta.js"
+        "content_script.js"
       ],
       "run_at": "document_idle"
     }

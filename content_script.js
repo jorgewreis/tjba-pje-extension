@@ -81,6 +81,37 @@ function verificaCampos() {
     }
 }
 
+// Verifica se a página é de consulta de processo
+if (window.location.href.startsWith("https://pje.tjba.jus.br/pje/Processo/ConsultaProcesso/")) {
+  incluiAssuntos();
+  window.addEventListener('load', function() {    
+    sleep(2000);
+    let assuntos = document.querySelector("#maisDetalhes > dl > dd:nth-child(4) > ul");
+    let i = 0;
+    while (!assuntos){
+        sleep(500);
+        assuntos = document.querySelector("#maisDetalhes > dl > dd:nth-child(4) > ul");
+        i++;
+        if (i > 6) {
+            break;
+        }
+    };
+    if (assuntos){        
+        verificaCampos();
+        mostraDigital();
+        mostraSigilo();
+        mostraPrioridades();
+        alteraMargemSuperior();
+    }
+  });
+}
+
+if (window.location.href.startsWith("https://pje.tjba.jus.br/pje/ng2/")) {
+    window.addEventListener('load', function() {
+        mostraLocal();
+    });
+}
+
 // Função para mostrar prioridades na barra superior
 function mostraPrioridades() {
     let elemento = "";
@@ -209,29 +240,3 @@ function alteraMargemSuperior() {
     document.querySelector(".timeline").style.height = 'calc(100vh - 60px)';
     document.querySelector(".detalhe-documento").style.top = margem;
 };
-
-window.addEventListener('load', function() {
-    sleep(2000);
-    let assuntos = document.querySelector("#maisDetalhes > dl > dd:nth-child(4) > ul");
-    let i = 0;
-    while (!assuntos){
-        sleep(500);
-        assuntos = document.querySelector("#maisDetalhes > dl > dd:nth-child(4) > ul");
-        i++;
-        if (i > 6) {
-            break;
-        }
-    };
-    if (assuntos){
-        incluiAssuntos();
-        verificaCampos();
-        mostraDigital();
-        mostraSigilo();
-        mostraPrioridades();
-        alteraMargemSuperior();
-    } else {
-        mostraLocal();
-    }
-    
-});
-

@@ -10,5 +10,24 @@ function consultaProcesso(){
     }
 }
 
+// Função para limpar pontos
+function limparPontos() {
+    let pontos = document.querySelector(".divPontos > .button > input");
+    if (pontos){
+        pontos.addEventListener("click", function () {
+            document.querySelector(".divPontos > .pontuacao").innerHTML = "0";
+            console.log("Pontos zerados!");
+        });
+    } else {
+        return;
+    }        
+}
+
+// Função para Enviar pontos para o banco de dados
+function sendToDatabase(){
+    limparPontos();
+}
+
 // Funções onload
 consultaProcesso();
+sendToDatabase();
