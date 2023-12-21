@@ -225,7 +225,7 @@ function sleep(ms) {
 // Função para incluir assuntos no menu
 async function incluiAssuntos() {
     let assuntos = document.querySelector("#maisDetalhes > dl > dd:nth-child(4) > ul");
-    let novoAssunto = document.createElement("div");
+    let novoAssunto = await document.createElement("div");
     novoAssunto.innerHTML = assuntos.textContent;
     novoAssunto.id = "titleAssuntos";
     let liMaisDetalhes = document.querySelector("#navbar > ul > li");
@@ -240,3 +240,22 @@ function alteraMargemSuperior() {
     document.querySelector(".timeline").style.height = 'calc(100vh - 60px)';
     document.querySelector(".detalhe-documento").style.top = margem;
 };
+
+function alterarCorDeFundo() {
+  // Verifica se há um valor armazenado no sessionStorage para a cor de fundo
+  var backgroundColor = sessionStorage.getItem('background-color');
+
+  // Se houver um valor no sessionStorage, atualiza a cor de fundo dos elementos
+  if (backgroundColor !== null) {
+      // Seleciona todos os elementos com background-color definido como var(--cor-tema-fundo)
+      var elementos = document.querySelectorAll('[style*="--cor-tema-fundo"]');
+
+      // Altera a cor de fundo desses elementos para o valor do sessionStorage
+      elementos.forEach(function(elemento) {
+          elemento.style.backgroundColor = backgroundColor;
+      });
+  }
+}
+
+// Chama a função ao abrir a página para aplicar a cor de fundo
+alterarCorDeFundo();

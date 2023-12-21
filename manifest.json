@@ -1,18 +1,18 @@
 {
   "manifest_version": 3,
-  "version": "1.0.13",
+  "version": "1.0.15",
   "name": "PJe Slim",
   "icons": {
     "16": "ico128.png",
     "48": "ico128.png",
     "128": "ico128.png"
   },
+  
+  "permissions": [
+    "contextMenus"
+  ],
+
   "description": "Pacote com alterações em CSS e JavaScript para plataforma PJe. Versão Beta desenvolvida integralmente por Jorge Reis.",
-
-  "action":{
-    "default_popup": "options.html"
-  },
-
   "content_scripts": [
     {
       "all_frames": true,

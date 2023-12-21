@@ -2,126 +2,85 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function mostraPontuacao() {
-    if (document.querySelector(".navbar-header") != null) {
-        await (Dom() == "complete");
-        let nomeSobrenome = document.querySelector(".navbar-header");
-        console.log("carregando pontuação...");
-        nomeSobrenome.style.position = "relative";
-        let atos = await atualizaPontuacao();
-        let conteudo = "<div class='text'>ATOS: </div><div class='pontuacao' style='margin-left: 10px;'>" + atos + "</div><div class='button'><input class='mini-button' type='button' value='send to database'></div>";
-        let novoElemento = document.createElement("div");
-        novoElemento.innerHTML = conteudo;
-        novoElemento.id = "titlePontuacao";
-
-        let novoLocal = document.querySelector(".navbar-header");
-        novoLocal.appendChild(novoElemento);
-
-        let titlePontuacao = document.querySelector("#titlePontuacao");
-        titlePontuacao.style.position = "absolute";
-        titlePontuacao.style.display = "flex";
-        titlePontuacao.style.flexDirection = "row";
-        titlePontuacao.style.alignItems = "center";
-        titlePontuacao.style.fontSize = "10px";
-        titlePontuacao.style.fontWeight = "400";
-        titlePontuacao.style.color = "whitesmoke";
-        titlePontuacao.style.top = "10px";
-        titlePontuacao.style.left = "calc(100vw / 2)";
+atosemTarefas = [
+    {
+        "id": 1, "ato": "consultaDocumento","pontos": 1,"tarefa": "[google-extension] Consulta de Documento no PJe"
+    },
+    {
+        "id": 2, "ato": "consultaProcesso","pontos": 1,"tarefa": "[google-extension] Consulta de Processo no PJe"
     }
-}
+]
 
-async function addAtos(tarefa, pontos) {
-    console.info("adicionando atos da tarefa " + tarefa);
-    let chave = "PJeAtos";
-    let atos = JSON.parse(localStorage.getItem(chave)) || {};
-    let pontosAntes = 0;
-
-    for (const key in atos) {
-        pontosAntes += atos[key];
+function addAtos(tarefa, proc) {
+    // procura na variável atosemTarefas o ato que corresponde a tarefa informada e retorna o resultado
+    let ResultConsulta = atosemTarefas.find( ({ ato }) => ato === tarefa );
+    let pontos = 0;
+    if (ResultConsulta) {
+        pontos = ResultConsulta.pontos;        
     }
-
-    if (!atos[tarefa]) {
-        atos[tarefa] = pontos;
-    } else {
-        atos[tarefa] += pontos;
-    }
-
-    localStorage.setItem(chave, JSON.stringify(atos));
-
-    let pontosDepois = 0;
-    atos = JSON.parse(localStorage.getItem(chave)) || {};
-    for (const key in atos) {
-        pontosDepois += atos[key];
-    }
+    let processo = proc;
     
-    if (pontosDepois != pontosAntes) {
-        console.info("Sucesso! +1 ato, total de atos: " + pontosDepois);
-        atualizaPontuacao();
-    } else {
-        console.log("Erro ao adicionar ato!");
-    }    
+    // criar um formulário oculto na página para enviar os dados para o banco de dados através da Classe ;./class/Produtividade.php
+    const form = document.createElement('form');
+    form.method = 'post';
+    form.action = 'https://ios1vcrime.com.br/requests/extensionProdPost.php';
+    form.target = 'iframe';
+    const inputName = document.createElement('input');
+    inputName.type = 'hidden';
+    inputName.name = 'user';
+    inputName.value = 'Jorge Wanderley';
+
+    const inputPontos = document.createElement('input');
+    inputPontos.type = 'hidden';
+    inputPontos.name = 'pts';
+    inputPontos.value = pontos;
+
+    const inputDesc = document.createElement('input');
+    inputDesc.type = 'hidden';
+    inputDesc.name = 'desc';
+    inputDesc.value = ResultConsulta.tarefa;
+
+    const inputProc = document.createElement('input');
+    inputProc.type = 'hidden';
+    inputProc.name = 'proc';
+    inputProc.value = processo;
+    
+    form.appendChild(inputName);
+    form.appendChild(inputPontos);
+    form.appendChild(inputDesc);
+    form.appendChild(inputProc);
+    document.body.appendChild(form);
+    form.submit();
+    
+    // após o envio, deletar formulario
+    //form.remove();
 }
-
-async function atualizaPontuacao() {
-    let chave = "PJeAtos";
-    let atos = JSON.parse(window.localStorage.getItem(chave)) || {};
-
-    let total = 0;
-
-    for (const key in atos) {
-        total += atos[key];
-    }
-
-    console.info("total de atos: " + total);
-    let divPontos = document.querySelector("#titlePontuacao > div.pontuacao");
-
-    await new Promise(resolve => {
-        if (document.readyState === "complete" || document.readyState === "interactive") {
-            divPontos.textContent = "100";
-            resolve();
-        } else {
-            document.addEventListener("DOMContentLoaded", resolve);
-        }
-    });    
-    // divPontos.textContent = total;
-}
-
-
-
-function limparPontos() {
-    let chave = "PJeAtos";
-    localStorage.removeItem(chave);
-    atualizaPontuacao();
-}
-
 
 // função para carregar os cliques nos botões e gerar pontuação
 function carregaCliques(){
+    console.log(Dom());
     // verifica se o botão de consulta de processo existe, se existir, adiciona o evento de click
-    if(document.querySelector("span.tarefa-numero-processo") != null){
+    if(document.querySelector(".media.interno .media-body span") != null){
         function adicionarEvento(elemento) {
             elemento.addEventListener("click", function() {
-                addAtos("consultaDocumento", 1);
+                let proc = "0000000-00.0000.8.05.0103";
+                if (document.querySelector("#frameTarefas > div > div.col-md-5.btn-toolbar.pb-5.toolbar-processo > button:last-child") != null) {
+                    proc = document.querySelector("#frameTarefas > div > div.col-md-5.btn-toolbar.pb-5.toolbar-processo > button:last-child").textContent;
+                }
+                addAtos("consultaDocumento", proc);
             });
         }
 
         // Seleciona todos os elementos que correspondem ao seletor
-        const elementosTarefaNumeroProcesso = document.querySelectorAll("span.tarefa-numero-processo");
+        const elementosTarefaNumeroProcesso = document.querySelectorAll(".media.interno .media-body span");
 
         // Itera sobre os elementos e adiciona o evento a cada um
         elementosTarefaNumeroProcesso.forEach(adicionarEvento);
     }
 
-    // verifica se o botão de send to database existe, se existir, adiciona o evento de limpar pontos
-    if(document.querySelector("#titlePontuacao .button .mini-button") != null){
-        document.querySelector("#titlePontuacao .button .mini-button").addEventListener("click", function() {
-            limparPontos();
-        });
-    }
-
     if(document.querySelector("#frameTarefas > div > div.col-md-5.btn-toolbar.pb-5.toolbar-processo > button:last-child") != null){
         document.querySelector("#frameTarefas > div > div.col-md-5.btn-toolbar.pb-5.toolbar-processo > button:last-child").addEventListener("click", function() {
-            addAtos("consultaProcesso", 1);
+            addAtos("consultaProcesso");
         });
     }
 }
@@ -131,5 +90,4 @@ function Dom(){
     return document.readyState;
 }
 
-mostraPontuacao();
 carregaCliques();

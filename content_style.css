@@ -6,6 +6,11 @@
 }
 
 /* PADROES ----------------------------------------------------------------------------------------------------*/
+:root{
+  --cor-tema-fundo: rgb(61, 61, 61);
+}
+
+
 body{
   font-family: 'Poppins', system-ui !important;
 	color: #454545 !important;
@@ -117,7 +122,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .navtop, .navtop .navbar-collapse{
-  background: #3d3d3d !important;
+  background: var(--cor-tema-fundo) !important;
   color: #fff !important;
 }
 
@@ -136,7 +141,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .nav-topo{
-  background: #3d3d3d !important;
+  background: var(--cor-tema-fundo) !important;
 }
 
 .navtop .navbar-brand > .titulo{
@@ -145,7 +150,7 @@ h1, h2, h3, h4, h5, h6{
 
 .navtop .menu-usuario.open > a:focus, .navtop .menu-usuario.open > a{
 	color: #fff !important;
-  background-color: #3D3D3D !important;
+  background-color: var(--cor-tema-fundo) !important;
 }
 
 .navtop .nome-sobrenome{
@@ -202,14 +207,35 @@ h1, h2, h3, h4, h5, h6{
   margin-top: -7px !important;
 }
 
+#navbar > .navbar-nav{
+  max-width: calc(100vw - 600px) !important;
+}
+
+#navbar > .navbar-right {
+  display: flex !important;
+  justify-content: flex-end !important;
+  width: 50vw !important;
+  min-width: 400px !important;
+}
+
+#navbar > .navbar-right > li > a {
+  color: #fff !important;
+  font-size: 12px !important;
+  padding: 15px !important;
+}
+
+#navbar > .navbar-right > li:hover {
+  background-color: #ffffff20 !important;
+}
+
 #titleTags{
   display: flex;
   flex-direction: row; 
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  width: 33vw;
-  margin: 5px 5px 5px 10px;
+  width: 90vw;
+  margin: 5px 5px -5px 10px;
 }
 
 #titleLocal{
@@ -222,7 +248,7 @@ h1, h2, h3, h4, h5, h6{
 
 #titlePrioridade{
   font-family: system-ui !important;
-  background-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgb(255, 255, 255) !important;
   min-width: 80px !important;
   width: fit-content !important;
   max-width: 30vw !important;
@@ -239,11 +265,13 @@ h1, h2, h3, h4, h5, h6{
   border-radius: 3px !important;
   margin-right: 5px !important;
   margin-top: 3px !important;
+  border: 1px solid var(--cor-tema-fundo) !important;
+  box-shadow: 0 1px 4px #3d3d3d;
 }
 
 #titleSigilo{
   font-family: system-ui !important;
-  background-color: rgba(255, 0, 35, 0.9) !important;
+  background-color: rgba(255, 0, 35, 1) !important;
   min-width: 80px !important;
   max-width: 30vw !important;
   width: fit-content !important;
@@ -261,6 +289,8 @@ h1, h2, h3, h4, h5, h6{
   margin-right: 5px !important;
   margin-top: 3px !important;
   text-shadow: 0 0 4px rgb(160, 160, 160) !important;
+  border: 1px solid var(--cor-tema-fundo) !important;
+  box-shadow: 0 1px 4px var(--cor-tema-fundo);
 }
 
 #titleDigital{
@@ -283,6 +313,8 @@ h1, h2, h3, h4, h5, h6{
   margin-right: 5px !important;
   margin-top: 3px !important;
   text-shadow: 0 0 4px rgb(160, 160, 160) !important;
+  border: 1px solid var(--cor-tema-fundo) !important;
+  box-shadow: 0 1px 4px var(--cor-tema-fundo);
 }
 
 #titleAssuntos{
@@ -406,7 +438,7 @@ assinatura > div > a{
 #processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > a > span{
   font-size: 10px !important;
   font-weight: 600 !important;
-  color:rgb(60, 60, 60) !important;
+  color: var(--cor-tema-fundo) !important;
   padding-left: 15px !important;
   margin-bottom: 10px !important;
 }
@@ -437,7 +469,7 @@ assinatura > div > a{
 }
 
 #processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > div.label-info{
-  background-color: #606060 !important;
+  background-color: var(--cor-tema-fundo) !important;
 }
 
 #processosTarefa > p-datalist > div > div > ul > li > processo-datalist-card > div > div.col-sm-11.no-padding.pt-5 > div.label-info > span:first-child{
@@ -526,8 +558,62 @@ assinatura > div > a{
   background: #c9e6ff !important;
 }
 
-.timeline .media.interno .media-body div:last-child{
+.timeline .media.interno.tipo-D > .box .anexos{
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.timeline .media.interno.tipo-D > .box > .anexos > a{
+  min-width: 25px !important;
+  min-height: 25px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;  
+  margin: 0 3px !important;
+}
+
+.timeline .media.interno.tipo-D > .box > .anexos > div > a > i.fa-sticky-note{
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+.timeline .media.interno.tipo-D > .box > .anexos > div > a > i.fa-sticky-note::after{
+  content: 'Lembrete' !important;
+  min-height: 10px !important;
+  min-width: 30px !important;
+  border-radius: 3px !important;
+  font-size: 9px !important;
+  font-weight: 500 !important;
+  font-family: 'Poppins', system-ui !important;
+  color:#454545 !important;
+  padding: 2px 5px !important;
+  margin-left: 3px !important;
+  background-color: gold !important;
+}
+
+.timeline .media.interno > .media-body.box > div:last-child{
   display: none !important;
+}
+
+.timeline .media.interno.tipo-D.active > .media-body.box > div:last-child{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+.timeline .media.interno.tipo-D.active > .media-body.box > div:last-child::before{
+  content: 'Movimentação realizada às' !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  margin-right: 3px !important;
+  color: #686868 !important;
 }
 
 .timeline .media.interno .media-body i.fa-bullhorn{
@@ -586,13 +672,15 @@ assinatura > div > a{
   border-bottom-color: lightgray !important;
 }
 
-.timeline .media.data .div-data-rolagem{
-  margin-left: 0 !important;
-  border-radius: 0 !important;
-  background-color: #b9b9b9 !important;
-  padding-left: 10px !important;
-  font-size: 14px !important;
-  margin-top: -117px !important;
+.timeline .media.data.div-data-rolagem{
+  display: block;
+  transform: scale(1.4);
+  position: fixed !important;
+  border-radius: 0px !important;
+  border: none !important;
+  box-shadow: 0 0 4px gray !important;
+  width: 100px !important;
+  left: 15px !important;
 }
 
 .timeline div.media.data > .media-body{
@@ -611,4 +699,8 @@ assinatura > div > a{
   font-weight: 500 !important;
   text-transform: uppercase !important;
   font-family: 'Poppins', system-ui !important;
+}
+
+.container-fluid>.navbar-header {
+  width: fit-content;
 }
