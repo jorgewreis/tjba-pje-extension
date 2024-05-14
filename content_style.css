@@ -7,7 +7,7 @@
 
 /* PADROES ----------------------------------------------------------------------------------------------------*/
 :root{
-  --cor-tema-fundo: rgb(61, 61, 61);
+  --cor-tema-fundo: rgb(0, 140, 240);
 }
 
 
@@ -46,40 +46,34 @@ body{
         width: 700px !important;
       }
 
-      body > div.form-signin{
+      body.login-body > div.form-signin{
         background: rgba(255, 255, 255, 0.3) !important;
         border: none !important;
         box-shadow: none !important;
         border-radius: 5px 5px 0 0 !important;
         border-bottom: 1px solid gray !important;
         width: 700px !important;
+        margin-left: -350px !important;
+        overflow-y: none !important;
       }
 
       .login div.identificacao > div.dados{
         display: flex !important;
         align-items: flex-end !important;
       }
-
-      /* --- Modo de Assinatura e Obter Certificado*/
-      .login div.acessar-certificado > form > a.modoOperacao, .login div.acessar-certificado > form > a#obterCertificado{
-        text-transform: uppercase !important;
-        font-size: 11px !important;
-        color: gray !important;
-        text-align: start !important;
-        margin-left: 10px !important;
-      }
-      .login div.acessar-certificado > form > a.modoOperacao > span{
-        font-weight: 700 !important;
-      }
+      
       /* --- Botão de entrar com certificado */
-      .login div.acessar-certificado > form > input#loginAplicacaoButton {
+      #kc-form-login .botao-certificado {
         background: #008cef !important;
         padding: 0 50px !important;
         min-height: 40px !important;
         width: max-content !important;
-      }
+        font-size: 12px !important;
+        margin-top: 100px !important;
+      }     
+
       /* --- Divisoria sem a palavra "ou" */
-      .login .formLogin#divLogin::before{
+      .div-login::before{
         display: none !important;
       }
        
@@ -94,12 +88,13 @@ body{
         margin-top: -15px !important;
       }
       /* --- Botão de entrar com usuário e senha */
-      .login #btnEntrar{
+      .div-login .botao-entrar{
         background: #008cef !important;
         padding: 0 30px !important;
         min-height: 40px !important;
         width: max-content !important;
-        margin-bottom: 30px !important;
+        margin-bottom: 20px !important;
+        font-size: 12px !important;
       }
     
     /* --- Barra de versionamento */
@@ -109,9 +104,18 @@ body{
       margin-left: 20px !important;
     }
     body > div.conteudo-login > div > div.versaoSistema > div::after{
-      content: 'Pje Slim - Versão Beta 1.0.12 - 24/08/2023 - 11:32' !important;
+      content: 'Pje Slim - Versão 1.0.15 - 14/05/2024 - 10:07' !important;
       text-transform: capitalize !important;
       color: #008cef !important;
+      background-color: white !important;
+      border-radius: 20px !important;
+      padding: 5px 10px 4px 10px !important;
+      margin-left: -10px !important;
+      margin-top: 5px !important;
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      width: fit-content !important;
     }
 
 /* CLASSES DO BOOTSRAP -----------------------------------------------------------------------------------------*/

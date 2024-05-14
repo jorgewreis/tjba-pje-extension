@@ -1,4 +1,9 @@
 
+## Versão 1.0.15
+- Correção de botões e cores na tela de login
+
+------------------------------------------------------------------------------------------------------
+
 ## Versão 1.0.12
 - Correção no tamanho da timeline de movimentações processuais;
 
